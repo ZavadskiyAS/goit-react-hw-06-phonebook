@@ -4,9 +4,7 @@ import { v4 as uuid } from 'uuid';
 import styles from './App.module.css';
 import ContactList from './contactList/ContactList';
 import Filter from './filter/Filter';
-import withTheme from './hoc/withTheme';
 import { Logo } from './logo/Logo';
-import Alert from './alert/Alert';
 
 class App extends Component {
   static alertTimeoutHandle = 0;
@@ -85,7 +83,6 @@ class App extends Component {
         <div style={{ color: themeCfg.fontColor, background: themeCfg.bodybg }}>
           <button onClick={this.props.toggle}>Change theme</button>
           <Logo />
-          {alert && <Alert title={alert} />}
           <ContactForm onSubmit={this.addContact} />
 
           <h2 className={styles.sectionTitle}>Contacts</h2>
@@ -102,4 +99,4 @@ class App extends Component {
   }
 }
 
-export default withTheme(App);
+export default App;
