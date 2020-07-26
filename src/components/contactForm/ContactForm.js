@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import contactsActions from '../../redux/contacts/contactsActions';
 import styles from './ContactForm.module.css';
 
-export default class ContactForm extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
@@ -17,6 +19,7 @@ export default class ContactForm extends Component {
     const { name, number } = this.state;
 
     this.props.onSubmit(name, number);
+
     this.setState({
       name: '',
       number: '',
@@ -31,6 +34,7 @@ export default class ContactForm extends Component {
           Name
           <br />
           <input
+            style={{ borderRadius: 4 }}
             name="name"
             type="text"
             value={name}
@@ -42,6 +46,7 @@ export default class ContactForm extends Component {
           Number
           <br />
           <input
+            style={{ borderRadius: 4, marginBottom: 5 }}
             name="number"
             type="text"
             value={number}
@@ -49,8 +54,14 @@ export default class ContactForm extends Component {
           />
         </label>
         <br />
-        <button type="submit">Add contact</button>
+        <button style={{ borderRadius: 4, padding: 4 }} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
 }
+
+export default connect(null, {
+  onSubmit: contactsActions.addContact,
+})(ContactForm);
