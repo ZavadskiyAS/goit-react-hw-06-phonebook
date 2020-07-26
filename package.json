@@ -2,7 +2,7 @@
   "name": "reacttamplate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oleksiihrushko.github.io/goit-react-hw-06-phonebook",
+  "homepage": "https://ZavadskiyAS.github.io/goit-react-hw-06-phonebook",
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
