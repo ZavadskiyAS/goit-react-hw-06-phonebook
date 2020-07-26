@@ -7,7 +7,7 @@ const logoStyles = {
   appearActive: styles.appearActive,
 };
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <CSSTransition
       in={true}
