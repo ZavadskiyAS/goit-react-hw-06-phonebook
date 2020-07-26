@@ -13,7 +13,7 @@ const ContactItem = ({ contact: { id, name, number }, onRemoveContact }) => {
         onClick={() => onRemoveContact(id)}
         type="button"
       >
-        Удалить
+        Delete
       </button>
     </li>
   );
